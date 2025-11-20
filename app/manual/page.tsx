@@ -270,7 +270,6 @@ export default function Manual() {
                 <li><strong>Complete Protocol:</strong> Full BB84 implementation with error correction and privacy amplification</li>
               </ul>
             </div>
-            </div>
           </section>
 
           
