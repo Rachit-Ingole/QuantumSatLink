@@ -1,23 +1,23 @@
 # Python FastAPI Backend Requirements
-# Install with: pip install -r requirements.txt
+# Compatible with PythonAnywhere Python 3.10
+# Install with: pip install --user -r requirements.txt
 
-# Web Framework (compatible with PythonAnywhere - no Rust required)
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-pydantic==1.10.13
+# Web Framework
+fastapi>=0.100.0
+uvicorn>=0.23.0
+pydantic>=1.10.0,<2.0.0
 
 # CORS Support
-python-multipart==0.0.6
+python-multipart>=0.0.6
 
-# Quantum Simulation (NumPy for calculations - PythonAnywhere compatible)
-numpy==1.24.3
+# Quantum Simulation - use latest compatible numpy
+numpy>=1.23.0,<2.0.0
 
 # Cryptography
-pycryptodome==3.20.0
+pycryptodome>=3.18.0
 
 # HTTP Client (for testing)
-httpx==0.26.0
+httpx>=0.24.0
 
-# Development
-python-dotenv==1.0.0
-a2wsgi==1.10.0
+# WSGI Adapter for PythonAnywhere
+a2wsgi>=1.8.0
