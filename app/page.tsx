@@ -292,7 +292,7 @@ export default function Home() {
       <footer className="border-t border-slate-800 bg-slate-900/50 backdrop-blur-sm mt-12">
         <div className="container mx-auto px-4 py-6 text-center text-slate-400 text-sm">
           <p>
-            Quantum Key Distribution Simulator • BB84 Protocol • Built for Educational Purposes
+            Quantum Key Distribution Simulator • BB84 Protocol • Built for SkyHack 2025
           </p>
           <p className="mt-1 text-xs">
             Backend: FastAPI | Frontend: Next.js + React Three Fiber
