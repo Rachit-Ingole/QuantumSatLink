@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Q-SatLink: Quantum-Secure Satellite Communication Simulator
 
-## Getting Started
+Q-SatLink is an interactive simulator that demonstrates how satellites can achieve **quantum-secure communication** using **Quantum Key Distribution (QKD)**. The project implements the **BB84 protocol** to show how single photons, random polarization bases, and QBER analysis create a shared secret key that cannot be intercepted without detection.
 
-First, run the development server:
+Built with a 3D Earth–Satellite visualization, the simulator models **realistic space-channel conditions** such as atmospheric scattering, cloud cover, beam divergence, distance attenuation, and environmental noise. Users can tweak these factors and observe how they affect photon transmission, base matching, QBER, and final key generation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The system includes an **eavesdropper (Eve) mode**, where intercepting photons causes measurable disturbances and a visible QBER spike. Once a secure key is established, Q-SatLink uses it for **AES-256 encryption and decryption**, completing a full end-to-end secure communication pipeline.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **BB84 Quantum Key Distribution**
+- **QBER-based eavesdropper detection**
+- **AES-256 encryption with quantum-generated keys**
+- **3D Earth, satellite, and ground station visualization**
+- **Realistic space conditions:**
+  - Cloud cover  
+  - Atmospheric scattering  
+  - Beam divergence  
+  - Distance & photon count  
+- **Live photon animation & basis matching**
+- **Interactive simulation controls**
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Why This Project?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Classical encryption algorithms like RSA will be vulnerable to future quantum computers.  
+Satellites operate for years and need encryption that remains secure long-term.  
+Q-SatLink demonstrates how **quantum physics provides unbreakable security**, making it ideal for next-generation satellite communication.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Frontend:** Next.js, React Three Fiber, Drei, Tailwind CSS  
+**Backend:** FastAPI (Python)  
+**Cryptography:** AES-256 (cryptography library)  
+**Visualization:** Real-time photon & laser link simulation  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Live Demo
+
+[https://quantum-sat-link.vercel.app/](https://quantum-sat-link.vercel.app/)
+
+---
+
+## How It Works
+
+1. Satellite sends photons encoded using random bases (BB84 protocol).  
+2. Ground station measures using its own random bases.  
+3. They publicly compare bases and keep only matching positions.  
+4. A small sample of bits is revealed to compute QBER.  
+5. High QBER → eavesdropper detected (key discarded).  
+6. Low QBER → secure quantum key generated.  
+7. Key is used for **AES-256 encryption and decryption**.
+
+---
+
+## Future Enhancements
+
+- Decoy-state BB84  
+- Real satellite TLE orbital data  
+- Advanced eavesdropper attack models  
+- Error correction & privacy amplification  
+- Multi-satellite & multi-ground-station support  
+
+---
+
+## Credits
+
+Developed by **Rachit Ingole - Team: PhotonPilot**  
+**Made for SKYHACKS:2025**
